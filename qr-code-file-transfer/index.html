@@ -4,4 +4,10 @@
     <meta http-equiv="refresh" content="0; url=https://ohijiho-aws.ddns.net/qr-code-file-transfer/" />
   </head>
   <body><p>Redirecting to the site, or maybe the site is down.</p></body>
+  <script>
+    const href = "https://ohijiho-aws.ddns.net/qr-code-file-transfer/";
+    fetch(href, { method: "HEAD" }).then((r) => {
+      if (r.ok) location.href = href;
+    });
+  </script>
 </html>
