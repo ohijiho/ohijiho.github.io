@@ -3,8 +3,14 @@
   <body><p>Redirecting to the site, or maybe the site is down.</p></body>
   <script>
     const href = "https://ohijiho-aws.ddns.net/qr-code-file-transfer/";
-    fetch(href, { method: "HEAD" }).then((r) => {
-      if (r.ok) location.href = href;
+    const iframe = document.createElement("iframe");
+    iframe.setAttribute('style', 'height:0;width:0;border:0;border:none;visibility:hidden;');
+    iframe.addEventListener("load", () => {
+      location.href = href;
+    });
+    iframe.href = href;
+    addEventListener("load", () => {
+      document.body.appendChild();
     });
   </script>
 </html>
